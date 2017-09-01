@@ -98,5 +98,5 @@ ENV/
 *.sqlite3
 *.origin
 
-
 blog/settings.py
+info.txt
