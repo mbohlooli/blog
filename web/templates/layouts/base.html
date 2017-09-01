@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>سایت من</title>
+
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap-rtl.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-rtl-theme.css' %}" rel="stylesheet">
+
+        <!-- Additional Css -->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        {% include 'layouts/nav.html' %}
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'js/bootstrap-rtl.min.js' %}"></script>
+    </body>
+</html>

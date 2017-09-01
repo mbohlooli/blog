@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="panel panel-default post" style="padding: 20px;">
+                <h1>{{ post.post_title }}</h1>
+                <hr>
+                <div>
+                    <p>{{ post.post_body | safe }}</p>
+                </div>
+                {% if user.is_authenticated %}
+                    <br>
+                    <div class="btn-group" role="group">
+                        <a href="{{ url }}admin/web/post/{{ post.id }}/change/" class="btn btn-primary btn-post">ویرایش</a>
+                        <a href="{{ url }}admin/web/post/{{ post.id }}/delete/" class="btn btn-danger btn-post">حذف</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
